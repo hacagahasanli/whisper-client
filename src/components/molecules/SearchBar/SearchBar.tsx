@@ -1,0 +1,1 @@
+export const SearchBar = () => <div></div>
