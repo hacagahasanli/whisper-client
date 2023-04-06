@@ -2,8 +2,19 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "pages/*": ["pages/*"]
-    },
+      "pages/*": ["pages/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "config/*": ["config/*"],
+      "constants/*": ["constants/*"],
+      "helpers/*": ["helpers/*"],
+      "hooks/*": ["hooks/*"],
+      "recoil/*": ["recoil/*"],
+      "services/*": ["services/*"],
+      "shared/*": ["shared/*"],
+      "styles/*": ["styles/*"],
+      "utils/*": ["utils/*"],
+   },
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": [
