@@ -1,10 +1,11 @@
 import { createBrowserRouter } from "react-router-dom"
+import { Login } from "components"
 
 const router = createBrowserRouter([
     {
         path: "/login",
-        // Component:
+        Component: Login
     }
 ])
 
-export default router;
+export default router
