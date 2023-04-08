@@ -14,6 +14,7 @@
       "shared/*": ["shared/*"],
       "styles/*": ["styles/*"],
       "utils/*": ["utils/*"],
+      "routes/*": ["routes/*"],
    },
     "target": "ESNext",
     "useDefineForClassFields": true,

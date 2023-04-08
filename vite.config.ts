@@ -19,6 +19,7 @@ export default defineConfig({
       'utils': path.resolve(__dirname, 'src/utils/index.ts'),
       'assets': path.resolve(__dirname, 'src/assets/index.ts'),
       'styles': path.resolve(__dirname, 'src/styles/index.ts'),
+      'routes': path.resolve(__dirname, 'src/routes/index.ts'),
     },
   },
 })
