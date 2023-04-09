@@ -20,6 +20,7 @@ export default defineConfig({
       'assets': path.resolve(__dirname, 'src/assets/index.ts'),
       'styles': path.resolve(__dirname, 'src/styles/index.ts'),
       'routes': path.resolve(__dirname, 'src/routes/index.ts'),
+      'interfaces': path.resolve(__dirname, 'src/interfaces/index.ts'),
     },
   },
 })
