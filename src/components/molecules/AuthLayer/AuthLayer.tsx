@@ -1,6 +1,7 @@
+import React from "react"
 import { logo_light } from "assets"
 
-export const AuthLayer = () => {
+export const AuthLayer = React.memo(() => {
     return (
         <div className="w-1/2 bg-default-bg min-h-screen text-white">
             <header className="flex flex-col justify-center gap-6 py-20 px-24">
@@ -14,4 +15,4 @@ export const AuthLayer = () => {
             </header>
         </div>
     )
-}
+})

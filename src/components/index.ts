@@ -2,7 +2,7 @@
 export { AccessButton } from "./atoms";
 
 //molecules
-export { AuthLayer } from './molecules';
+export { AuthLayer, LoginForm } from './molecules';
 
 //organisms
 export { Login } from "./organisms";
