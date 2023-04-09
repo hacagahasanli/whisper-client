@@ -2,4 +2,9 @@ interface IInput {
     type: string;
 }
 
-export type { IInput }
+interface IInputsByType {
+    label: string;
+    id: string;
+}
+
+export type { IInput, IInputsByType }

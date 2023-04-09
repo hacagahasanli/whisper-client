@@ -1,18 +1,8 @@
-import { IInput } from "./IInput"
-
-const inputs = {
-    "email": {
-        label: "Email",
-        id: "email",
-    },
-    "password": {
-        label: "Password",
-        id: "password"
-    }
-}
+import { IInput, IInputsByType } from "./IInput"
+import { INPUTS_BY_TYPE } from "constants/form-related"
 
 export const Input = ({ type }: IInput) => {
-    const { label, id }: { label: string, id: string } = inputs["email"]
+    const { label, id }: IInputsByType = INPUTS_BY_TYPE["email"]
     return (
         <div>
             <label htmlFor={id}>{label}</label>
