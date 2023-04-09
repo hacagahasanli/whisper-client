@@ -1,8 +1,8 @@
-
 //atoms
 export { AccessButton } from "./atoms";
 
 //molecules
+export { AuthLayer } from './molecules';
 
 //organisms
 export { Login } from "./organisms";

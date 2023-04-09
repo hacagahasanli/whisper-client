@@ -4,7 +4,7 @@ export default {
     extend: {
       colors: {
         'default-tc': '#E6E6E6',
-        'access-btn-bg': '#1A4CA1'
+        'default-bg': '#1A4CA1'
       },
     },
   },

@@ -1,9 +1,9 @@
-import { ContainerLayout, AccessButton } from "components"
+import { ContainerLayout, AuthLayer } from "components"
 
 export const Login = () => {
     return (
         <ContainerLayout>
-            <AccessButton text={"Log in"} />
+            <AuthLayer />
         </ContainerLayout>
     )
 }
