@@ -1,5 +1,5 @@
-import logo_svg from "./logo-svgs/logo.svg"
+import logo_light from "./logo-svgs/logo-light.svg"
 
 export {
-    logo_svg
+    logo_light
 }
