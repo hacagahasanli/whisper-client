@@ -15,7 +15,7 @@ export const Input = ({ type, isRow, orderId }: IInput) => {
         <div className={`flex ${flexD} w-full justify-center gap-[.5rem]`}>
             <label className={`text-[${textSize}] cursor-${crsType}`} htmlFor={id}>{label}</label>
             <input
-                className={`border border-solid border-input-brd order-[${odr}] cursor-${crsType} rounded-[.25rem] py-[.5rem] px-[.5rem] w-full`}
+                className={`border border-solid border-input-brd order-[${odr}] cursor-${crsType} rounded-[.25rem] py-[.7rem] px-[.7rem] w-full`}
                 {...{ type, id, placeholder }}
             />
         </div>

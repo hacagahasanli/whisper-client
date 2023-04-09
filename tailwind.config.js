@@ -5,8 +5,11 @@ export default {
       colors: {
         'default-tc': '#E6E6E6',
         'default-bg': '#1A4CA1',
-        'input-brd': '#E6E6E6'
+        'input-brd': '#E6E6E6',
       },
+      borderRadius: {
+        'md': '.4rem'
+      }
     },
   },
   plugins: [],

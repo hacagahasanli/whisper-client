@@ -10,8 +10,8 @@ export const AuthLayer = React.memo(() => {
                         <img src={logo_light} alt="light-logo" />
                     </div>
                     <div className="flex flex-col justify-center gap-4">
-                        <span className="lg:text-5xl sm:text-xs md:text-xl">Storing</span>
-                        <strong className="text-5xl">most important files</strong>
+                        <span className="lg:text-5xl sm:text-xs md:text-xl font-light">Storing</span>
+                        <span className="text-5xl font-bold">most important files</span>
                     </div>
                 </div>
             </header>
