@@ -1,6 +1,11 @@
 import { Input, AccessButton } from 'components';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { authDirectorState } from 'store';
 
 export const LoginForm = () => {
+    const [authDirector, setAuthDirector] = useRecoilState(authDirectorState)
+
     return (
         <div className="w-1/2 min-h-screen flex flex-col justify-center items-center relative">
             <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[400px] mt-[5rem] absolute left-0 mb-[8.5rem]">

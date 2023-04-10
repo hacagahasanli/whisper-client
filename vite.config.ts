@@ -13,7 +13,7 @@ export default defineConfig({
       'constants': path.resolve(__dirname, 'src/constants/index.ts'),
       'helpers': path.resolve(__dirname, 'src/helpers/index.ts'),
       'hooks': path.resolve(__dirname, 'src/hooks/index.ts'),
-      'recoil': path.resolve(__dirname, 'src/recoil/index.ts'),
+      'store': path.resolve(__dirname, 'src/store/index.ts'),
       'services': path.resolve(__dirname, 'src/services/index.ts'),
       'shared': path.resolve(__dirname, 'src/shared/index.ts'),
       'utils': path.resolve(__dirname, 'src/utils/index.ts'),
