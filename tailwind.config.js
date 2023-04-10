@@ -9,7 +9,17 @@ export default {
       },
       borderRadius: {
         'md': '.4rem'
-      }
+      },
+      flexCol: {
+        '.flex-col': {
+          '@apply flex flex-col': '',
+        },
+      },
+      jc: {
+        '.justify-center': {
+          '@apply justify-center': '',
+        },
+      },
     },
   },
   plugins: [],
@@ -17,7 +27,7 @@ export default {
     './src/**/*.html',
     './src/**/*.ts',
     './src/**/*.tsx',
-    './src/**/*.css', // Include your styles.css file here
+    './src/styles.css', // Include your styles.css file here
   ],
 }
 
