@@ -9,7 +9,7 @@
       "constants/*": ["constants/*"],
       "helpers/*": ["helpers/*"],
       "hooks/*": ["hooks/*"],
-      "recoil/*": ["recoil/*"],
+      "store/*": ["store/*"],
       "services/*": ["services/*"],
       "shared/*": ["shared/*"],
       "styles/*": ["styles/*"],
