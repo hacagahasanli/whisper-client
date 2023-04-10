@@ -4,7 +4,21 @@ export default {
     extend: {
       colors: {
         'default-tc': '#E6E6E6',
-        'access-btn-bg': '#1A4CA1'
+        'default-bg': '#1A4CA1',
+        'input-brd': '#E6E6E6',
+      },
+      borderRadius: {
+        'md': '.4rem'
+      },
+      flexCol: {
+        '.flex-col': {
+          '@apply flex flex-col': '',
+        },
+      },
+      jc: {
+        '.justify-center': {
+          '@apply justify-center': '',
+        },
       },
     },
   },
@@ -13,7 +27,7 @@ export default {
     './src/**/*.html',
     './src/**/*.ts',
     './src/**/*.tsx',
-    './src/**/*.css', // Include your styles.css file here
+    './src/styles.css', // Include your styles.css file here
   ],
 }
 

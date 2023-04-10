@@ -15,6 +15,7 @@
       "styles/*": ["styles/*"],
       "utils/*": ["utils/*"],
       "routes/*": ["routes/*"],
+      "interfaces/*": ["interfaces/*"],
    },
     "target": "ESNext",
     "useDefineForClassFields": true,
