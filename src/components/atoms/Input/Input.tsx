@@ -3,8 +3,8 @@ import { IInputsByTypeObject } from "interfaces"
 import { INPUTS_BY_TYPE } from "../../../constants"
 import { getValueByType } from "./InputHelpers"
 
-export const Input = ({ type, isRow, orderId }: IInput) => {
-    const { label, id, placeholder }: IInputsByTypeObject = INPUTS_BY_TYPE[type]
+export const Input = ({ inputKey, isRow, orderId }: IInput) => {
+    const { label, id, placeholder, type }: IInputsByTypeObject = INPUTS_BY_TYPE[inputKey]
     const { textSize, crsType, textC, appcenone, flexDir } = getValueByType(type, isRow)
     const odr = orderId || "0";
 

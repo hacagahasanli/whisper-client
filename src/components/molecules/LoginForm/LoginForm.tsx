@@ -16,7 +16,7 @@ export const LoginForm = () => {
     const formDetails: IFormDetails = {
         login: {
             title: "Log In",
-            inputs: [{ type: "email" }, { type: "password" }],
+            inputs: [{ inputKey: "email" }, { inputKey: "password" }],
             checkBox: {
                 type: "checkbox",
                 isRow: true,
@@ -38,9 +38,10 @@ export const LoginForm = () => {
         },
         signUpLevelOne: {
             title: "Sign up",
-            inputs: [{ type: "email" }],
+            inputs: [{ inputKey: "email" }],
             submitBtn: {
-                text: 'Sign up'
+                text: 'Sign up',
+                onClick: (e: Event) => changeDirection(e, "signUpLevelTwo")
             },
             accountReminder: {
                 text: "You have an account?"
@@ -48,6 +49,17 @@ export const LoginForm = () => {
             authMethod: {
                 text: "Log In",
                 onClick: (e: Event) => changeDirection(e, "login")
+            },
+        },
+        signUpLevelTwo: {
+            title: "Sign up",
+            inputs: [{ inputKey: "fullname" }, { inputKey: "password" }],
+            submitBtn: {
+                text: 'Create account',
+
+            },
+            backwardAuthMethod: {
+                onClick: (e: Event) => changeDirection(e, "signUpLevelOne")
             },
         }
     }
@@ -61,12 +73,12 @@ export const LoginForm = () => {
                 <span className="text-[#393939] text-[2.5rem] w-full text-start font-bold mb-[2rem]">{title}</span>
                 <form className="w-full">
                     <div className="flex flex-col gap-[1.4rem]">
-                        {inputs?.map(({ type }: { type: string }) => <Input key={v4()} {...{ type }} />)}
+                        {inputs?.map(({ inputKey }: { inputKey: string }) => <Input key={v4()} {...{ inputKey }} />)}
                     </div>
                     <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}]`}>
                         {!!checkBox && (
                             <>
-                                <Input type={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
+                                <Input inputKey={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
                                 {!!forgetPassword && (
                                     <div>
                                         <span className="text-default-bg cursor-pointer">{forgetPassword.text}</span>
@@ -76,7 +88,7 @@ export const LoginForm = () => {
                         )}
                     </div>
                     <div>
-                        {!!submitBtn && <AccessButton type="submit" text={submitBtn.text} />}
+                        {!!submitBtn && <AccessButton type="submit" text={submitBtn.text} onClick={submitBtn?.onClick} />}
                         {!!accountReminder && !!authMethod && (
                             <div className='flex justify-center gap-[.5rem] items-center mt-[1rem] cursor-pointer'>
                                 <span className='text-[#32568A]'>{accountReminder?.text}</span>

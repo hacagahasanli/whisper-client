@@ -1,5 +1,5 @@
 interface IInput {
-    type: string;
+    inputKey: string;
     isRow?: boolean;
     orderId?:string;
 }
