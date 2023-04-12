@@ -13,7 +13,7 @@ export const Input = ({ type, isRow, orderId }: IInput) => {
             <div className={`flex flex-${flexDir} w-full justify-center gap-[.5rem]`}>
                 <label className={`text-[${textSize}] cursor-${crsType} text-[${textC}] `} htmlFor={id}>{label}</label>
                 <input
-                    className={`border border-solid ${appcenone} border-input-brd order-[${odr}] cursor-${crsType} rounded-[.25rem] py-[.7rem] px-[.7rem] w-full`}
+                    className={`border border-solid ${appcenone} border-input-brd order-[${odr}] cursor-${crsType} rounded-[.25rem] py-[.7rem] px-[.7rem] w-full bg-white`}
                     {...{ type, id, placeholder }}
                 />
             </div>
