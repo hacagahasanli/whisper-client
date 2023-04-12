@@ -7,6 +7,12 @@ import { v4 } from 'uuid';
 export const LoginForm = () => {
     const [authDirector, setAuthDirector] = useRecoilState(authDirectorState)
 
+    const changeDirection = (e: Event, director: string) => {
+        e.preventDefault();
+        e.stopPropagation();
+        setAuthDirector(director)
+    }
+
     const formDetails: IFormDetails = {
         login: {
             title: "Log In",
@@ -24,17 +30,13 @@ export const LoginForm = () => {
             },
             authMethod: {
                 text: "Sign up",
-                onClick: (e: Event) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setAuthDirector("signUp")
-                }
+                onClick: (e: Event) => changeDirection(e, "signUpLevelOne")
             },
             forgetPassword: {
                 text: "Forget password?"
             }
         },
-        signUp: {
+        signUpLevelOne: {
             title: "Sign up",
             inputs: [{ type: "email" }],
             submitBtn: {
@@ -44,11 +46,13 @@ export const LoginForm = () => {
                 text: "You have an account?"
             },
             authMethod: {
-                text: "Log In"
+                text: "Log In",
+                onClick: (e: Event) => changeDirection(e, "login")
             },
         }
     }
 
+    const topRem = authDirector === "login" ? "1.5rem" : "1rem"
     const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword } = formDetails[authDirector]
 
     return (
@@ -59,16 +63,18 @@ export const LoginForm = () => {
                     <div className="flex flex-col gap-[1.4rem]">
                         {inputs?.map(({ type }: { type: string }) => <Input key={v4()} {...{ type }} />)}
                     </div>
-                    {!!checkBox && (
-                        <div className="flex justify-between items-center mt-[1rem]">
-                            <Input type={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
-                            {!!forgetPassword && (
-                                <div>
-                                    <span className="text-default-bg cursor-pointer">{forgetPassword.text}</span>
-                                </div>
-                            )}
-                        </div>
-                    )}
+                    <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}]`}>
+                        {!!checkBox && (
+                            <>
+                                <Input type={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
+                                {!!forgetPassword && (
+                                    <div>
+                                        <span className="text-default-bg cursor-pointer">{forgetPassword.text}</span>
+                                    </div>
+                                )}
+                            </>
+                        )}
+                    </div>
                     <div>
                         {!!submitBtn && <AccessButton type="submit" text={submitBtn.text} />}
                         {!!accountReminder && !!authMethod && (
