@@ -1,10 +1,9 @@
-import { Input, AccessButton } from 'components';
+import { Input, AccessButton, Icon } from 'components';
 import { useRecoilState } from 'recoil';
 import { authDirectorState } from 'store';
 import { IFormDetails } from "./ILoginForm"
 import { useNavigate } from 'react-router-dom';
 import { v4 } from 'uuid';
-
 
 export const LoginForm = () => {
     const navigate = useNavigate()
@@ -74,11 +73,14 @@ export const LoginForm = () => {
     }
 
     const topRem = authDirector === "login" ? 1.5 : 1
-    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword } = formDetails[authDirector]
+    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod } = formDetails[authDirector]
 
     return (
         <div className="w-1/2 min-h-screen flex flex-col relative">
-            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[12rem] absolute left-0 mb-[8.5rem]">
+            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[8rem] absolute left-0 mb-[8.5rem]">
+                <div className='w-full flex mb-[2.5rem]'>
+                    {authDirector === "signUpLevelTwo" && <Icon method={backwardAuthMethod.onClick} name="arrow_left" />}
+                </div>
                 <span className="text-[#393939] text-[2.5rem] w-full text-start font-bold mb-[2rem]">{title}</span>
                 <form className="w-full">
                     <div className="flex flex-col gap-[1.4rem]">
