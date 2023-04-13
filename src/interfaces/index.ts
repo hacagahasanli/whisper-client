@@ -1,3 +1,4 @@
 export type {
-    IInputsByTypeObject
+    IInputsByTypeObject,
+    IFormDetails
 } from "./Iform-related"

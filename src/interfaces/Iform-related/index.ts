@@ -5,4 +5,9 @@ interface IInputsByTypeObject {
     type:string;
 }
 
-export type { IInputsByTypeObject }
+interface IFormDetails {
+    [key: string]: any;
+}
+
+
+export type { IInputsByTypeObject, IFormDetails }
