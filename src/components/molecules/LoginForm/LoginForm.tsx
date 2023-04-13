@@ -78,7 +78,7 @@ export const LoginForm = () => {
 
     return (
         <div className="w-1/2 min-h-screen flex flex-col relative">
-            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[8rem] absolute left-0 mb-[8.5rem]">
+            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[12rem] absolute left-0 mb-[8.5rem]">
                 <span className="text-[#393939] text-[2.5rem] w-full text-start font-bold mb-[2rem]">{title}</span>
                 <form className="w-full">
                     <div className="flex flex-col gap-[1.4rem]">
