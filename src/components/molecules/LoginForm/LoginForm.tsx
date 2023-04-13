@@ -1,25 +1,21 @@
 import { Input, AccessButton, Icon } from 'components';
-import { useRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import { authDirectorState } from 'store';
 import { IFormDetails } from "./ILoginForm"
-import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { v4 } from 'uuid';
+import { useNavigator } from 'hooks';
 
 export const LoginForm = () => {
-    const navigate = useNavigate()
-    const [authDirector, setAuthDirector] = useRecoilState(authDirectorState)
+    const { navigator } = useNavigator()
+    const setAuthDirector = useSetRecoilState(authDirectorState)
+    const location = useLocation().pathname.trim().replace(/^\/|\/$/g, '')
 
     const changeDirection = (e: Event, director: string) => {
         e.preventDefault();
         e.stopPropagation();
-        setAuthDirector(director)
+        setAuthDirector(location)
         navigator(director)
-    }
-
-    const navigator = (director: string) => {
-        director === "login"
-            ? navigate("/login", { replace: true })
-            : navigate("/signup", { replace: true })
     }
 
     const formDetails: IFormDetails = {
@@ -38,18 +34,18 @@ export const LoginForm = () => {
             },
             authMethod: {
                 text: "Sign up",
-                onClick: (e: Event) => changeDirection(e, "signUpLevelOne")
+                onClick: (e: Event) => changeDirection(e, "signup-email")
             },
             forgetPassword: {
                 text: "Forget password?"
             }
         },
-        signUpLevelOne: {
+        'signup-email': {
             title: "Sign up",
             inputs: [{ inputKey: "email" }],
             submitBtn: {
                 text: 'Sign up',
-                onClick: (e: Event) => changeDirection(e, "signUpLevelTwo")
+                onClick: (e: Event) => changeDirection(e, "signup-fullname")
             },
             accountReminder: {
                 text: "You have an account?"
@@ -59,27 +55,27 @@ export const LoginForm = () => {
                 onClick: (e: Event) => changeDirection(e, "login")
             },
         },
-        signUpLevelTwo: {
+        'signup-fullname': {
             title: "Sign up",
             inputs: [{ inputKey: "fullname" }, { inputKey: "password" }],
             submitBtn: {
                 text: 'Create account',
-
+                onClick: (e: Event) => changeDirection(e, "login")
             },
             backwardAuthMethod: {
-                onClick: (e: Event) => changeDirection(e, "signUpLevelOne")
+                onClick: (e: Event) => changeDirection(e, "signup-email")
             },
         }
     }
 
-    const topRem = authDirector === "login" ? 1.5 : 1
-    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod } = formDetails[authDirector]
+    const topRem = location === "login" ? '1.5' : '3'
+    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod } = formDetails[location]
 
     return (
         <div className="w-1/2 min-h-screen flex flex-col relative">
-            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[8rem] absolute left-0 mb-[8.5rem]">
+            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[9rem] absolute left-0 mb-[8.5rem]">
                 <div className='w-full flex mb-[2.5rem]'>
-                    {authDirector === "signUpLevelTwo" && <Icon method={backwardAuthMethod.onClick} name="arrow_left" />}
+                    {location === "signup-fullname" && <Icon method={backwardAuthMethod.onClick} name="arrow_left" />}
                 </div>
                 <span className="text-[#393939] text-[2.5rem] w-full text-start font-bold mb-[2rem]">{title}</span>
                 <form className="w-full">

@@ -7,7 +7,11 @@ const router = createBrowserRouter([
         Component: Login
     },
     {
-        path: "/signup",
+        path: "/signup-email",
+        Component: Login
+    },
+    {
+        path: "/signup-fullname",
         Component: Login
     }
 ])

@@ -1,7 +1,4 @@
-import { arrow_left } from "assets/icons"
 import { FC } from "react"
-import { useSetRecoilState } from "recoil"
-import { authDirectorState } from "store"
 
 type IIcons = {
     [key: string]: any

@@ -11,7 +11,6 @@ const inputDynmClasses = (tagRole: string, isCheckBox: boolean, orderId?: string
                 "cursor-auto": !isCheckBox,
                 "appearance-none checked:bg-default-bg form-checkbox": isCheckBox,
                 "order-[-1]": orderId,
-                "0": !orderId
             },
             inputDefaultClasses
         )
