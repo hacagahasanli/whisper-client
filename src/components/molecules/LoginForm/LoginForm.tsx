@@ -3,14 +3,24 @@ import { useRecoilState } from 'recoil';
 import { authDirectorState } from 'store';
 import { IFormDetails } from "./ILoginForm"
 import { v4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
+
 
 export const LoginForm = () => {
+    const navigate = useNavigate()
     const [authDirector, setAuthDirector] = useRecoilState(authDirectorState)
 
     const changeDirection = (e: Event, director: string) => {
         e.preventDefault();
         e.stopPropagation();
         setAuthDirector(director)
+        navigator(director)
+    }
+
+    const navigator = (director: string) => {
+        director === "login"
+            ? navigate("/login", { replace: true })
+            : navigate("/signup", { replace: true })
     }
 
     const formDetails: IFormDetails = {
@@ -64,18 +74,18 @@ export const LoginForm = () => {
         }
     }
 
-    const topRem = authDirector === "login" ? "1.5rem" : "1rem"
+    const topRem = authDirector === "login" ? 1.5 : 1
     const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword } = formDetails[authDirector]
 
     return (
-        <div className="w-1/2 min-h-screen flex flex-col justify-center items-center relative">
-            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[400px] mt-[5rem] absolute left-0 mb-[8.5rem]">
+        <div className="w-1/2 min-h-screen flex flex-col relative">
+            <div className="flex flex-col ml-[8rem] justify-center items-center min-w-[400px] max-w-[500px] mt-[8rem] absolute left-0 mb-[8.5rem]">
                 <span className="text-[#393939] text-[2.5rem] w-full text-start font-bold mb-[2rem]">{title}</span>
                 <form className="w-full">
                     <div className="flex flex-col gap-[1.4rem]">
                         {inputs?.map(({ inputKey }: { inputKey: string }) => <Input key={v4()} {...{ inputKey }} />)}
                     </div>
-                    <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}]`}>
+                    <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}rem]`}>
                         {!!checkBox && (
                             <>
                                 <Input inputKey={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
