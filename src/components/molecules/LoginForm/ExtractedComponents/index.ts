@@ -1,1 +1,2 @@
-export * from "./ExtractedComponent"
+export { LogicalAuthSection } from "./LogicalAuthSection";
+export { LogicalInput } from "./LogicalInput";

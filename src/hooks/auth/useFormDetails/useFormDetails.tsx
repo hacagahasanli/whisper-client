@@ -5,11 +5,11 @@ import { useNavigator } from "../useNavigator";
 import { IFormDetails } from "interfaces";
 
 export const useFormDetails = () => {
+    const { navigator } = useNavigator()
     const setAuthDirector = useSetRecoilState(authDirectorState)
     const location = useLocation().pathname.trim().replace(/^\/|\/$/g, '')
-    const { navigator } = useNavigator()
 
-    const changeDirection = (e: Event, director: string) => {
+    const changeDirection = (e: React.MouseEvent<HTMLButtonElement> | Event, director: string) => {
         e.preventDefault();
         e.stopPropagation();
         setAuthDirector(location)
@@ -32,7 +32,7 @@ export const useFormDetails = () => {
             },
             authMethod: {
                 text: "Sign up",
-                onClick: (e: Event) => changeDirection(e, "signup-email")
+                onClick: (e: React.MouseEvent<HTMLButtonElement>) => changeDirection(e, "signup-email")
             },
             forgetPassword: {
                 text: "Forget password?"
@@ -43,14 +43,14 @@ export const useFormDetails = () => {
             inputs: [{ inputKey: "email" }],
             submitBtn: {
                 text: 'Sign up',
-                onClick: (e: Event) => changeDirection(e, "signup-fullname")
+                onClick: (e: React.MouseEvent<HTMLButtonElement>) => changeDirection(e, "signup-fullname")
             },
             accountReminder: {
                 text: "You have an account?"
             },
             authMethod: {
                 text: "Log In",
-                onClick: (e: Event) => changeDirection(e, "login")
+                onClick: (e: React.MouseEvent<HTMLButtonElement>) => changeDirection(e, "login")
             },
         },
         'signup-fullname': {
@@ -58,7 +58,7 @@ export const useFormDetails = () => {
             inputs: [{ inputKey: "fullname" }, { inputKey: "password" }],
             submitBtn: {
                 text: 'Create account',
-                onClick: (e: Event) => changeDirection(e, "login")
+                onClick: (e: React.MouseEvent<HTMLButtonElement>) => changeDirection(e, "login")
             },
             backwardAuthMethod: {
                 onClick: (e: Event) => changeDirection(e, "signup-email")

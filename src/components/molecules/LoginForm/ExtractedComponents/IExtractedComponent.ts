@@ -16,7 +16,6 @@ interface ISubmitBtn {
 interface AuthMethod {
     text:string;
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-
 }
 
 interface ILogicalAuthSectionProps {
