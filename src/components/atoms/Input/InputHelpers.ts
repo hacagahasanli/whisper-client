@@ -14,14 +14,14 @@ const getValueByType = (type: string, isRow?: boolean) => {
     const textSize = getFontSize(type);
     const crsType = getCursorType(type);
     const textC = getTextColor(type);
-    const appcenone = getAppearenceClass(type)
+    const newappearence = getAppearenceClass(type)
     const flexDir = getFlexDir(isRow)
 
     return {
         textSize,
         crsType,
         textC,
-        appcenone,
+        newappearence,
         flexDir
     }
 }
