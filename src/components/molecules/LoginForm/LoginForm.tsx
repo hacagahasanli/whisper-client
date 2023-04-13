@@ -1,12 +1,10 @@
-import { Input, AccessButton, Icon } from 'components';
-import { useFormDetails } from 'hooks';
 import { v4 } from 'uuid';
+import { Input, Icon } from 'components';
+import { useFormDetails } from 'hooks';
+import { LogicalInput, LogicalAuthSection } from './ExtractedComponents';
 
 export const LoginForm = () => {
-    const { location, formDetails } = useFormDetails()
-
-    const topRem = location === "login" ? '1.5' : '3'
-    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod } = formDetails[location]
+    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod, topRem, location } = useFormDetails()
 
     return (
         <div className="w-1/2 min-h-screen flex flex-col relative">
@@ -20,25 +18,10 @@ export const LoginForm = () => {
                         {inputs?.map(({ inputKey }: { inputKey: string }) => <Input key={v4()} {...{ inputKey }} />)}
                     </div>
                     <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}rem]`}>
-                        {!!checkBox && (
-                            <>
-                                <Input inputKey={checkBox?.type} orderId={checkBox?.orderId} />
-                                {!!forgetPassword && (
-                                    <div>
-                                        <span className="text-default-bg cursor-pointer">{forgetPassword.text}</span>
-                                    </div>
-                                )}
-                            </>
-                        )}
+                        <LogicalInput {...{ checkBox, forgetPassword }} />
                     </div>
                     <div>
-                        {!!submitBtn && <AccessButton type="submit" text={submitBtn.text} onClick={submitBtn?.onClick} />}
-                        {!!accountReminder && !!authMethod && (
-                            <div className='flex justify-center gap-[.5rem] items-center mt-[1rem] cursor-pointer'>
-                                <span className='text-[#32568A]'>{accountReminder?.text}</span>
-                                <span className='underline text-default-bg' onClick={authMethod.onClick}>{authMethod?.text}</span>
-                            </div>
-                        )}
+                        <LogicalAuthSection {...{ submitBtn, accountReminder, authMethod }} />
                     </div>
                 </form>
             </div>

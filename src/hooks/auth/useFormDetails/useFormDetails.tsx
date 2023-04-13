@@ -66,8 +66,10 @@ export const useFormDetails = () => {
         }
     }
 
+    const { inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod } = formDetails[location]
+    const topRem = location === "login" ? '1.5' : '3'
+
     return {
-        formDetails,
-        location
+        inputs, title, checkBox, submitBtn, accountReminder, authMethod, forgetPassword, backwardAuthMethod, topRem, location
     }
 }
