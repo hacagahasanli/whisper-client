@@ -5,6 +5,14 @@ const router = createBrowserRouter([
     {
         path: "/login",
         Component: Login
+    },
+    {
+        path: "/signup-email",
+        Component: Login
+    },
+    {
+        path: "/signup-fullname",
+        Component: Login
     }
 ])
 

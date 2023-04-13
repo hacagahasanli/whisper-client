@@ -19,6 +19,7 @@ export {
 
 //templates
 export {
-    ContainerLayout
+    ContainerLayout,
+    Icon
 } from "./templates";
 

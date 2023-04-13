@@ -1,3 +1,5 @@
 export type {
-    IInputsByTypeObject
+    IInputsByTypeObject,
+    IFormDetails,
+    MouseClickBtn
 } from "./Iform-related"
