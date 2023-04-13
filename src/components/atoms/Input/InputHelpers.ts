@@ -1,28 +1,48 @@
-const isCheckbox = (type: string) => type === "checkbox"
+import classnames from "classnames"
 
-const getFontSize = (type: string) => isCheckbox(type) ? "1rem" : "1.2rem";
+const inputWrapperDefaultClasses = `flex w-full justify-center gap-[.5rem]`
+const inputDefaultClasses = `border border-solid border-input-brd rounded-[.25rem] py-[.7rem] px-[.7rem] w-full bg-white`
 
-const getCursorType = (type: string) => isCheckbox(type) ? "pointer" : "auto";
+const inputDynmClasses = (tagRole: string, isCheckBox: boolean, orderId?: string) => {
+    switch (tagRole) {
+        case "input": return classnames(
+            {
+                "cursor-pointer": isCheckBox,
+                "cursor-auto": !isCheckBox,
+                "appearance-none checked:bg-default-bg form-checkbox": isCheckBox,
+                "order-[-1]": orderId,
+                "0": !orderId
+            },
+            inputDefaultClasses
+        )
+        case "inputWrapper": return classnames(
+            {
+                "flex-row": isCheckBox,
+                "flex-col": !isCheckBox
+            },
+            inputWrapperDefaultClasses
+        )
+        case "label": return classnames(
+            {
+                "text-[1rem]": isCheckBox,
+                "cursor-pointer": isCheckBox,
+                "cursor-auto": !isCheckBox,
+                "text-gray-600": isCheckBox,
+            }
+        )
+    }
+}
 
-const getTextColor = (type: string) => isCheckbox(type) && "gray-600";
-
-const getAppearenceClass = (type: string) => isCheckbox(type) ? "appearance-none checked:bg-default-bg form-checkbox" : ""
-
-const getFlexDir = (isRow?: boolean) => isRow ? "row" : "col";
-
-const getValueByType = (type: string, isRow?: boolean) => {
-    const textSize = getFontSize(type);
-    const crsType = getCursorType(type);
-    const textC = getTextColor(type);
-    const newappearence = getAppearenceClass(type)
-    const flexDir = getFlexDir(isRow)
+const getValueByType = (type: string, orderId?: string) => {
+    const isCheckBox = type === "checkbox"
+    const inputClasses = inputDynmClasses("input", isCheckBox, orderId)
+    const inputWrapperClasses = inputDynmClasses("inputWrapper", isCheckBox, orderId)
+    const labelClasses = inputDynmClasses("label", isCheckBox, orderId)
 
     return {
-        textSize,
-        crsType,
-        textC,
-        newappearence,
-        flexDir
+        labelClasses,
+        inputWrapperClasses,
+        inputClasses
     }
 }
 

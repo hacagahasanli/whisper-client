@@ -2,8 +2,8 @@ import { Input, AccessButton } from 'components';
 import { useRecoilState } from 'recoil';
 import { authDirectorState } from 'store';
 import { IFormDetails } from "./ILoginForm"
-import { v4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import { v4 } from 'uuid';
 
 
 export const LoginForm = () => {
@@ -29,7 +29,6 @@ export const LoginForm = () => {
             inputs: [{ inputKey: "email" }, { inputKey: "password" }],
             checkBox: {
                 type: "checkbox",
-                isRow: true,
                 orderId: "-1"
             },
             submitBtn: {
@@ -88,7 +87,7 @@ export const LoginForm = () => {
                     <div className={`flex justify-between items-center mt-[1rem] mb-[${topRem}rem]`}>
                         {!!checkBox && (
                             <>
-                                <Input inputKey={checkBox?.type} isRow={checkBox?.isRow} orderId={checkBox?.orderId} />
+                                <Input inputKey={checkBox?.type} orderId={checkBox?.orderId} />
                                 {!!forgetPassword && (
                                     <div>
                                         <span className="text-default-bg cursor-pointer">{forgetPassword.text}</span>
