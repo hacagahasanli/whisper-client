@@ -1,19 +1,17 @@
 import { createBrowserRouter } from "react-router-dom"
 import { Login } from "components"
 
+const createLoginRoute = (path: string) => {
+    return {
+        path: path,
+        Component: Login
+    };
+}
+
 const router = createBrowserRouter([
-    {
-        path: "/login",
-        Component: Login
-    },
-    {
-        path: "/signup-email",
-        Component: Login
-    },
-    {
-        path: "/signup-fullname",
-        Component: Login
-    }
+    createLoginRoute("/login"),
+    createLoginRoute("/signup-email"),
+    createLoginRoute("/signup-fullname")
 ])
 
 export default router
