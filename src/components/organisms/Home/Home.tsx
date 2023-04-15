@@ -1,7 +1,9 @@
+import { ContainerLayout } from "components"
+
 export const Home = () => {
     return (
-        <div>
+        <ContainerLayout>
 
-        </div>
+        </ContainerLayout>
     )
 }

@@ -20,6 +20,7 @@ export {
 //templates
 export {
     LoginLayout,
+    ContainerLayout,
     Icon
 } from "./templates";
 
