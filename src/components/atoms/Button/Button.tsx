@@ -1,12 +1,18 @@
+import { Icon } from "components"
 import { IAccessButton } from "./IButton"
+import { buttonClasses } from "./ButtonHelper"
 
-const AccessButton = ({ type = "button", text, onClick }: IAccessButton) => (
-    <button
-        {...{ type, onClick }}
-        className={`w-full px-20 bg-default-bg text-[1.2rem] rounded-md text-white min-h-[3rem]`}
-    >
-        {text}
-    </button>
-)
+const AccessButton = ({ type = "button", text, onClick, hasIcon = false, bgWhite = false, width = "full" }: IAccessButton) => {
+    const btnClass = buttonClasses(bgWhite, width)
+    return (
+        <button
+            {...{ type, onClick }}
+            className={btnClass}
+        >
+            {text}
+            {hasIcon && <Icon name="arrow_right" />}
+        </button>
+    )
+}
 
 export { AccessButton }

@@ -8,7 +8,8 @@ export {
 export {
     AuthLayer,
     LoginForm,
-    SearchBar
+    SearchBar,
+    Navbar
 } from './molecules';
 
 //organisms
