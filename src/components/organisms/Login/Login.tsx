@@ -1,11 +1,11 @@
-import { ContainerLayout, AuthLayer, LoginForm } from "components"
+import { LoginLayout, AuthLayer, LoginForm } from "components"
 
 export const Login = () => {
     return (
-        <ContainerLayout>
+        <LoginLayout>
             <AuthLayer />
             <LoginForm />
-        </ContainerLayout>
+        </LoginLayout>
     )
 }
 

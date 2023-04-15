@@ -1,4 +1,3 @@
-
 //atoms
 export {
     AccessButton,
@@ -14,12 +13,13 @@ export {
 
 //organisms
 export {
-    Login
+    Login,
+    Home
 } from "./organisms";
 
 //templates
 export {
-    ContainerLayout,
+    LoginLayout,
     Icon
 } from "./templates";
 

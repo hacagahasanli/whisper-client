@@ -1,6 +1,6 @@
 
 //layouts
-export { ContainerLayout } from "./ContainerLayout";
+export { LoginLayout } from "./LoginLayout";
 
 //....
 export { Icon } from "./IconGenerator";
