@@ -4,4 +4,8 @@ interface IChildrenProps {
     children?: ReactNode;
 }
 
-export type { IChildrenProps }
+interface IKeyStringObject {
+    [key: string]: string
+}
+
+export type { IChildrenProps, IKeyStringObject }

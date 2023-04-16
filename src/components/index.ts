@@ -1,7 +1,8 @@
 //atoms
 export {
     AccessButton,
-    Input
+    Input,
+    Card
 } from "./atoms";
 
 //molecules

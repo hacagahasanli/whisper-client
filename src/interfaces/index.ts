@@ -4,4 +4,4 @@ export type {
     MouseClickBtn
 } from "./Iform-related"
 
-export type { IChildrenProps } from "./global"
+export type { IChildrenProps, IKeyStringObject } from "./global"
