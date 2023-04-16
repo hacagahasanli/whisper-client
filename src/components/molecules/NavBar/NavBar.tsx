@@ -21,19 +21,19 @@ export const Navbar = () => {
         },
     ]
     return (
-        <header className="flex justify-between items-center w-[1280px] mx-auto">
+        <header className="flex justify-between items-center w-[1280px] mx-auto max-h-[70px]">
             <div>
                 <Icon name="logo_light" />
             </div>
             <nav className="flex">
                 <ul className="flex gap-[5rem] items-center">
                     {navLists.map(({ id, name }: INavList) => (
-                        <li className="text-[#A8BBDB]" key={id}>{name}</li>
+                        <li className="text-[#A8BBDB] text-[1.2rem] cursor-pointer" key={id}>{name}</li>
                     ))}
                 </ul>
             </nav>
             <div className="flex gap-[2rem] items-center">
-                <span className="text-[#A8BBDB]">Login</span>
+                <span className="text-[#A8BBDB] text-[1.2rem] cursor-pointer">Login</span>
                 <AccessButton text={"Try free"} bgWhite hasIcon width="" />
             </div>
         </header>

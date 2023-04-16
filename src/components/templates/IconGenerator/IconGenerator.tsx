@@ -18,8 +18,8 @@ const ArrowLeft = ({ method }: IMethod) => {
 
 const ArrowRight = ({ method }: IMethod) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 96 960 960" width="20" stroke="currentColor" strokeWidth="2">
-            <path d="m480 902.218-56.131-57.131 230.042-229.478H153.782v-79.218h500.129L423.869 306.348 480 249.782 806.218 576 480 902.218Z" />
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
         </svg>
     )
 }
@@ -47,7 +47,7 @@ export const Icon: FC<{ name: string; method?: () => void }> = ({ name, method }
     const icons: IIcons = {
         "arrow_left": ArrowLeft,
         "arrow_right": ArrowRight,
-        "logo_light": LogoLight
+        "logo_light": LogoLight,
     }
     const SelectedIcon = icons[name]
     return <SelectedIcon {...{ method }} />;
