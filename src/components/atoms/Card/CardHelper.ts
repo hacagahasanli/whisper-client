@@ -8,7 +8,7 @@ const radiusClass: IKeyStringObject = {
 }
 
 const paddingClass: IKeyStringObject = {
-    "work-lg": "px-[2.4rem] py-[1.8rem]"
+    "work-lg": "px-[1.1rem] py-[1.45rem]"
 }
 
 const classesCombine = ({ padding, radius }: ICombineClassesProps) => {
