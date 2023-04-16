@@ -23,7 +23,7 @@ export const Navbar = () => {
     return (
         <header className="flex justify-between items-center w-[1280px] mx-auto max-h-[70px]">
             <div>
-                <Icon name="logo_light" />
+                <Icon name="logo_light" width="90" height="86" />
             </div>
             <nav className="flex">
                 <ul className="flex gap-[5rem] items-center">
