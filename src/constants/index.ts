@@ -1,1 +1,2 @@
-export { INPUTS_BY_TYPE } from "./form-related";
+export * from "./form-related";
+export * from "./landing-related"
