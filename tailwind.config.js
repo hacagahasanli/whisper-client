@@ -6,6 +6,7 @@ export default {
         'default-tc': '#E6E6E6',
         'default-bg': '#1A4CA1',
         'input-brd': '#E6E6E6',
+        'gray-blue': '#A8BBDB;'
       },
       borderRadius: {
         'md': '.4rem'
