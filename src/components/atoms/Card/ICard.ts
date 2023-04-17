@@ -1,7 +1,7 @@
 import { IChildrenProps } from 'interfaces';
 
 interface ICardProps extends IChildrenProps {
-    classes: string
+    classes: string;
 }
 
 interface ICombineClassesProps {
