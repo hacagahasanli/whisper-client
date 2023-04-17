@@ -24,6 +24,7 @@ export {
 export {
     LoginLayout,
     ContainerLayout,
+    SectionLayout,
     Icon
 } from "./templates";
 
