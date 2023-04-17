@@ -54,7 +54,7 @@ export const HowItWorksSection = () => {
         <section className="w-full">
             <div className="max-w-[1100px] autoColFlexCenter">
                 <div className="autoColFlexCenter gap-[.1rem]">
-                    <div className=" text-[3rem] gap-[1rem] font-[700] mt-[6.5rem]">
+                    <div className="flexCenterx2 text-[3rem] gap-[1rem] font-[700] mt-[6.5rem]">
                         <span className="text-default-bg">How</span>
                         <span className="text-[#272727]">It Works</span>
                     </div>
