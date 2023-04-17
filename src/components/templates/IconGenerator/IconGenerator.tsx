@@ -1,12 +1,5 @@
 import { FC } from "react"
-
-type IIcons = {
-    [key: string]: any
-}
-
-type IMethod = {
-    method?: () => void
-}
+import { IIcons, IMethod } from "./IIconGenerator"
 
 const ArrowLeft = ({ method }: IMethod) => {
     return (
