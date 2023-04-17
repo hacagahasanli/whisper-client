@@ -4,7 +4,7 @@ import { IWorkPlans, IWorkPlansProps } from "../IHowItWorks";
 import { StepItems } from "./StepItem";
 
 export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
-    <div className="betweenItemsCenter w-full mt-[4rem]">
+    <div className="betweenItemsCenter w-full">
         {worksPlans?.map(({ id, stepItems, btnText, bottomTitle, extraChoiceBtn, topTitle }: IWorkPlans) => (
             <div className="colItemsCenter gap-[1.5rem] font-semibold" key={id}>
                 {!!topTitle && <span className="text-[1.4rem]">{topTitle}</span>}
