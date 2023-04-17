@@ -36,6 +36,8 @@ const LogoLight = ({ width = "79", height = "75" }: { width: string; height: str
     )
 }
 
+
+
 export const Icon: FC<{ name: string; method?: () => void; width?: string; height?: string; }> = ({ name, method, ...rest }) => {
     const icons: IIcons = {
         "arrow_left": ArrowLeft,
