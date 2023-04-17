@@ -6,4 +6,9 @@ type IMethod = {
     method?: () => void
 }
 
-export type { IMethod, IIcons }
+interface IIconSize {
+    width: string;
+    height: string
+}
+
+export type { IMethod, IIcons, IIconSize }

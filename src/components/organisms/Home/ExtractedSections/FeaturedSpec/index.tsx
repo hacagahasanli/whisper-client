@@ -1,35 +1,50 @@
-import { Card, SectionLayout, SectionTitle } from "components"
+import { SectionLayout, SectionTitle } from "components"
+import { FeaturedSpecItems } from "./FeaturedSpecItems"
+import { v4 } from "uuid"
 
 export const FeaturedSpecSection = () => {
+    const featuredSpecItems = [
+        {
+            id: "security/" + v4(),
+            icon: "",
+            title: "Security",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+        {
+            id: "plans/" + v4(),
+            icon: "",
+            title: "Plans",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+        {
+            id: "filter/" + v4(),
+            icon: "",
+            title: "Filter",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+        {
+            id: "encryption/" + v4(),
+            icon: "",
+            title: "Encryption",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+        {
+            id: "sharing/" + v4(),
+            icon: "",
+            title: "Sharing",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+        {
+            id: "debug/" + v4(),
+            icon: "",
+            title: "Debug",
+            description: "Grow the holistic world view of disruptive innovation"
+        },
+    ]
     return (
         <SectionLayout classes="max-w-[980px] mt-[6.5rem] gap-[4rem]">
             <SectionTitle name="featureSpecifications" />
-            <div className="flex justify-center gap-[1.2rem] w-full">
-                <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem]">
-                    <div className="w-[280px] bg-white colItemsCenter gap-[2rem]">
-                        <div className="colJustifyCenter gap-[0.2rem]">
-                            <span>Security</span>
-                            <span>Grow the holistic world view of disruptive innovation</span>
-                        </div>
-                    </div>
-                </Card>
-                <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem]">
-                    <div className="w-[280px] colJustifyCenter gap-[1rem] bg-white">
-                        <div className="colJustifyCenter gap-[0.2rem]">
-                            <span>Security</span>
-                            <span>Grow the holistic world view of disruptive innovation</span>
-                        </div>
-                    </div>
-                </Card>
-                <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem]">
-                    <div className="w-[280px] bg-white colItemsCenter gap-[2rem]">
-                        <div className="colJustifyCenter gap-[0.2rem]">
-                            <span>Security</span>
-                            <span>Grow the holistic world view of disruptive innovation</span>
-                        </div>
-                    </div>
-                </Card>
-            </div>
+            <FeaturedSpecItems {...{ featuredSpecItems }} />
         </SectionLayout>
     )
 }

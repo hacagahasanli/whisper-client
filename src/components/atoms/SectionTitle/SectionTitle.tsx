@@ -1,7 +1,8 @@
+import { memo } from "react"
 import { HOME_SECTION_TITLES } from "../../../constants"
 import { SectionTitleProps } from "./ISectionTitle"
 
-export const SectionTitle = ({ name }: SectionTitleProps) => {
+export const SectionTitle = memo(({ name }: SectionTitleProps) => {
     const { main, subMain, detailedText } = HOME_SECTION_TITLES[name]
     return (
         <div className="autoColFlexCenter">
@@ -12,4 +13,4 @@ export const SectionTitle = ({ name }: SectionTitleProps) => {
             <span className="text-[#7F848D] text-[1.2rem] font-[500]">{detailedText}</span>
         </div>
     )
-}
+})

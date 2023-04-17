@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { IStepItems } from "../../IHowItWorks";
+import { IStepItems } from "../../../IExtractedSections";
 
 interface IStepItemsProps {
     stepItems: IStepItems[]

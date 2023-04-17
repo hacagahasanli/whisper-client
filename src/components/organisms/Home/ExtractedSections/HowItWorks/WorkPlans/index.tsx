@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { AccessButton, Card } from "components";
-import { IWorkPlans, IWorkPlansProps } from "../IHowItWorks";
 import { StepItems } from "./StepItem";
+import { IWorkPlans, IWorkPlansProps } from "../../IExtractedSections";
 
 export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
     <div className="betweenItemsCenter w-full">
