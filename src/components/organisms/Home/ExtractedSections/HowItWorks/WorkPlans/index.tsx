@@ -1,6 +1,7 @@
-import { AccessButton, Card } from "components";
-import { IStepItems, IWorkPlans, IWorkPlansProps } from "../IHowItWorks";
 import { memo } from "react";
+import { AccessButton, Card } from "components";
+import { IWorkPlans, IWorkPlansProps } from "../IHowItWorks";
+import { StepItems } from "./StepItem";
 
 export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
     <div className="betweenItemsCenter w-full mt-[4rem]">
@@ -9,11 +10,7 @@ export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
                 {!!topTitle && <span className="text-[1.4rem]">{topTitle}</span>}
                 <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem]">
                     <div className="w-[250px] bg-white colItemsCenter gap-[1rem]">
-                        {stepItems?.map(({ id, text }: IStepItems) => (
-                            <div key={id} className="h-[50px] w-full bg-home-bg rounded-md font-normal text-[1rem] flexCenterx2">
-                                <span>{text}</span>
-                            </div>
-                        ))}
+                        <StepItems {...{ stepItems }} />
                         <AccessButton text={btnText} />
                         {!!extraChoiceBtn && <span className="font-light text-[1.2rem] ">{extraChoiceBtn}</span>}
                     </div>
