@@ -42,7 +42,7 @@ export const FeaturedSpecSection = () => {
         },
     ]
     return (
-        <SectionLayout classes="max-w-[980px] mt-[6.5rem] gap-[4rem]">
+        <SectionLayout classes="max-w-[1000px] mt-[6.5rem] gap-[4rem]">
             <SectionTitle name="featureSpecifications" />
             <FeaturedSpecItems {...{ featuredSpecItems }} />
         </SectionLayout>
