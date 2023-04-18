@@ -1,5 +1,3 @@
-import { FC } from "react";
-
 interface IStepItems {
     id: string;
     text: string;
@@ -16,7 +14,7 @@ interface IWorkPlans {
 
 interface IFeaturedSpecItems {
     id: string;
-    icon?: string;
+    icon: string;
     title: string;
     description: string;
 }
