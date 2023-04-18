@@ -12,7 +12,7 @@ export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
                     <div className="w-[250px] bg-white colItemsCenter gap-[1rem]">
                         <StepItems {...{ stepItems }} />
                         <AccessButton text={btnText} />
-                        {!!extraChoiceBtn && <span className="font-light text-[1.2rem] ">{extraChoiceBtn}</span>}
+                        {!!extraChoiceBtn && <span className="font-light text-[1.2rem] cursor-pointer">{extraChoiceBtn}</span>}
                     </div>
                 </Card>
                 {!!bottomTitle && <span className="text-[1.4rem]">{bottomTitle}</span>}
