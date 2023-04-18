@@ -27,54 +27,6 @@ export const PricingPlans = () => {
                     </div>
                 </div>
             </Card>
-            <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full">
-                <div className="w-full">
-                    <div>
-                        <div>
-                            <Icon name="cup" />
-                        </div>
-                        <div>
-                            <span></span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                        <span>Per month</span>
-                    </div>
-                    <div>line</div>
-                    <div>
-                        <div>
-                            <span>icon</span>
-                            <span>text</span>
-                        </div>
-                    </div>
-                </div>
-            </Card>
-            <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full">
-                <div className="w-full">
-                    <div>
-                        <div>
-                            <Icon name="cup" />
-                        </div>
-                        <div>
-                            <span></span>
-                            <div>
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </div>
-                        <span>Per month</span>
-                    </div>
-                    <div>line</div>
-                    <div>
-                        <div>
-                            <span>icon</span>
-                            <span>text</span>
-                        </div>
-                    </div>
-                </div>
-            </Card>
         </div>
     )
 }
