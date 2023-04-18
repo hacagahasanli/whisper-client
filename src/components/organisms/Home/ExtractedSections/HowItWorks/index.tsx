@@ -1,5 +1,5 @@
+import { IWorkPlans } from "../IExtractedSections"
 import { WorkPlans } from "./WorkPlans"
-import { IWorkPlans } from "./IHowItWorks"
 import { SectionTitle, SectionLayout } from "components"
 
 export const HowItWorksSection = () => {

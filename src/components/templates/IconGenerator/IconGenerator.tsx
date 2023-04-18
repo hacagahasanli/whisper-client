@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { IIcons } from "./IIconGenerator"
-import { ArrowLeft, ArrowRight, Debug, Encryption, Filter, LogoLight, Plans, Security, Sharing } from "./Icons"
+import { ArrowLeft, ArrowRight, Cup, Debug, Encryption, Filter, LogoLight, Plans, Security, Sharing } from "./Icons"
 
 export const Icon: FC<{ name: string; method?: () => void; width?: string; height?: string; }> = ({ name, method, ...rest }) => {
     const icons: IIcons = {
@@ -13,6 +13,7 @@ export const Icon: FC<{ name: string; method?: () => void; width?: string; heigh
         "home_encryption": Encryption,
         "home_plans": Plans,
         "home_sharing": Sharing,
+        "cup": Cup
     }
     const SelectedIcon = icons[name]
     return <SelectedIcon {...{ method }} {...rest} />;

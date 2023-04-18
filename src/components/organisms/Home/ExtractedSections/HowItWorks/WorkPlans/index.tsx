@@ -8,7 +8,7 @@ export const WorkPlans = memo(({ worksPlans }: IWorkPlansProps) => (
         {worksPlans?.map(({ id, stepItems, btnText, bottomTitle, extraChoiceBtn, topTitle }: IWorkPlans) => (
             <div className="colItemsCenter gap-[1.5rem] font-semibold" key={id}>
                 {!!topTitle && <span className="text-[1.4rem]">{topTitle}</span>}
-                <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem]">
+                <Card classes="px-[1.1rem] py-[1.45rem] rounded-[1rem] bg-white">
                     <div className="w-[250px] bg-white colItemsCenter gap-[1rem]">
                         <StepItems {...{ stepItems }} />
                         <AccessButton text={btnText} />
