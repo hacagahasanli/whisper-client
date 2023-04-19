@@ -1,7 +1,6 @@
-import { Card, Icon, TransparentButton } from "components"
+import { Card, TransparentButton } from "components"
 import { v4 } from "uuid"
 import { IPlans } from "../../IExtractedSections"
-import { PlanPrice } from "../PlanPrice"
 import { PlanDetails } from "../PlanDetails"
 import { PlanHeader } from "../PlanHeader"
 
