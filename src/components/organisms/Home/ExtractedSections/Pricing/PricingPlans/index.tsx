@@ -11,7 +11,8 @@ export const PricingPlans = () => {
             value: "0",
             perMonth: 'Per month',
             bgColor: 'bg-[#EDCB50]',
-            textColor: 'text-[${color}]',
+            textColor: 'text-[#EDCB50]',
+            bdColor: 'border-[#EDCB50]',
             details: [
                 {
                     id: `basicDetail/${v4()}`,
@@ -51,6 +52,8 @@ export const PricingPlans = () => {
             perMonth: 'Per month',
             bgColor: 'bg-[#1681FE]',
             textColor: 'text-[#1681FE]',
+            bdColor: 'border-[#1681FE]',
+            borderCard: 'border-[.125rem] border-solid border-[#1681FE]',
             details: [
                 {
                     id: `professionalDetail/${v4()}`,
@@ -87,6 +90,7 @@ export const PricingPlans = () => {
             plan_name: "Enterprise",
             bgColor: 'bg-[#448C74]',
             textColor: 'text-[#448C74]',
+            bdColor: 'border-[#448C74]',
             custom: "Custom",
             details: [
                 {
@@ -126,7 +130,7 @@ export const PricingPlans = () => {
     ]
     return (
         <div className="flex justify-between w-full gap-[1.5rem] p-0">
-            {plans.map(({ id, plan_name, details, bgColor,textColor, value, currency, custom, perMonth }: IPlans) => {
+            {plans.map(({ id, plan_name, details, bgColor, textColor, bdColor, borderCard, value, currency, custom, perMonth }: IPlans) => {
                 const valueContent = !!value ? (
                     <div className="flex justify-between w-[2.2rem]">
                         <span style={{ lineHeight: "1.2rem" }} className="self-end font-semibold text-[1.2rem]">{currency}</span>
@@ -134,21 +138,21 @@ export const PricingPlans = () => {
                     </div>
                 ) : <span className="font-bold text-[1.1rem]">{custom}</span>
                 return (
-                    <Card key={id} classes="px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241]">
+                    <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] ${borderCard}`}>
                         <div className="w-full colJustifyCenter gap-[1rem]">
                             <div className="flex">
                                 <Card classes={`p-[1rem] rounded-[.6rem] ${bgColor} inline-block`}>
                                     <Icon name="cup" />
                                 </Card>
                                 <div className="flex flex-col justify-between min-h-full ml-[.6rem]">
-                                    <span className={`text-[${textColor}]`}>{plan_name}</span>
+                                    <span className={`${textColor}`}>{plan_name}</span>
                                     {valueContent}
                                 </div>
                                 {!!perMonth && <span className="self-end ml-[2rem] italic font-light text-[.8rem]">{perMonth}</span>}
                             </div>
                             <span className="w-full h-[.1rem] bg-[#EAEBEC] mt-[.6rem] mb-[1.5rem]"></span>
                             <div className="colJustifyCenter gap-[.55rem] text-[.92rem]">
-                                {details.map(({ id, detail, icon_name = "check_mark", classes = "font-semibold" }: IPricingDetails) => {
+                                {details.map(({ id, detail, icon_name = "check_mark", classes = "font-normal" }: IPricingDetails) => {
                                     return (
                                         <div key={id} className="flex items-center gap-[.3rem]">
                                             <Icon name={icon_name} color={textColor} />
@@ -157,7 +161,7 @@ export const PricingPlans = () => {
                                     )
                                 })}
                             </div>
-                            <TransparentButton text="Get Start" />
+                            <TransparentButton text="Get Start" classes={`${textColor} ${bdColor}`} />
                         </div>
                     </Card>
                 )

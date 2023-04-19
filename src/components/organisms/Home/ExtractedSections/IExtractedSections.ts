@@ -43,6 +43,8 @@ interface IPlans {
     textColor: string,
     perMonth?:string,
     custom?: string,
+    bdColor:string;
+    borderCard?:string;
     details: IPricingDetails[],
 }
 

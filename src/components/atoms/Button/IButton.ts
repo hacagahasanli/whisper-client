@@ -11,7 +11,7 @@ interface IAccessButton extends IDefaultButton {
 }
 
 interface ITransparentButton extends IDefaultButton {
-    color?: string;
+    classes?: string;
 }
 
 

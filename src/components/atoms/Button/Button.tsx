@@ -15,11 +15,11 @@ const AccessButton = ({ type = "button", text, onClick, hasIcon = false, bgWhite
     )
 }
 
-export const TransparentButton = ({ type = "button", onClick, color, text }: ITransparentButton) => {
+export const TransparentButton = ({ type = "button", onClick, classes, text }: ITransparentButton) => {
     return (
         <button
             {...{ type, onClick }}
-            className={"bg-transparent border border-solid border-[orange]"}
+            className={`${classes} text-[.85rem] font-bold bg-transparent border border-solid rounded-[0.5rem] w-full py-[.3rem]`}
         >
             {text}
         </button>
