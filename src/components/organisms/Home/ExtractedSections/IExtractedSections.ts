@@ -39,12 +39,12 @@ interface IPlans {
     plan_name: string,
     currency?: string,
     value?: string,
-    color: string,
+    bgColor: string,
+    textColor: string,
+    perMonth?:string,
     custom?: string,
     details: IPricingDetails[],
 }
-
-
 
 export type {
     IWorkPlans,

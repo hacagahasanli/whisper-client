@@ -3,7 +3,8 @@ export {
     AccessButton,
     Input,
     Card,
-    SectionTitle
+    SectionTitle,
+    TransparentButton
 } from "./atoms";
 
 //molecules

@@ -1,4 +1,4 @@
-import { Card, Icon } from "components"
+import { Card, Icon, TransparentButton } from "components"
 import { v4 } from "uuid"
 import { IPlans, IPricingDetails } from "../../IExtractedSections"
 
@@ -9,7 +9,9 @@ export const PricingPlans = () => {
             plan_name: "Basic",
             currency: '$',
             value: "0",
-            color: '#EDCB50',
+            perMonth: 'Per month',
+            bgColor: 'bg-[#EDCB50]',
+            textColor: 'text-[${color}]',
             details: [
                 {
                     id: `basicDetail/${v4()}`,
@@ -46,7 +48,9 @@ export const PricingPlans = () => {
             plan_name: "Professional",
             currency: '$',
             value: "5",
-            color: '#1681FE',
+            perMonth: 'Per month',
+            bgColor: 'bg-[#1681FE]',
+            textColor: 'text-[#1681FE]',
             details: [
                 {
                     id: `professionalDetail/${v4()}`,
@@ -81,7 +85,8 @@ export const PricingPlans = () => {
         {
             id: `enterprise/${v4()}`,
             plan_name: "Enterprise",
-            color: '#448C74',
+            bgColor: 'bg-[#448C74]',
+            textColor: 'text-[#448C74]',
             custom: "Custom",
             details: [
                 {
@@ -121,7 +126,7 @@ export const PricingPlans = () => {
     ]
     return (
         <div className="flex justify-between w-full gap-[1.5rem] p-0">
-            {plans.map(({ id, plan_name, details, color, value, currency, custom }: IPlans) => {
+            {plans.map(({ id, plan_name, details, bgColor,textColor, value, currency, custom, perMonth }: IPlans) => {
                 const valueContent = !!value ? (
                     <div className="flex justify-between w-[2.2rem]">
                         <span style={{ lineHeight: "1.2rem" }} className="self-end font-semibold text-[1.2rem]">{currency}</span>
@@ -132,26 +137,27 @@ export const PricingPlans = () => {
                     <Card key={id} classes="px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241]">
                         <div className="w-full colJustifyCenter gap-[1rem]">
                             <div className="flex">
-                                <Card classes={`p-[1rem] rounded-[.6rem] bg-[${color}] inline-block`}>
+                                <Card classes={`p-[1rem] rounded-[.6rem] ${bgColor} inline-block`}>
                                     <Icon name="cup" />
                                 </Card>
                                 <div className="flex flex-col justify-between min-h-full ml-[.6rem]">
-                                    <span className={`text-[${color}]`}>{plan_name}</span>
+                                    <span className={`text-[${textColor}]`}>{plan_name}</span>
                                     {valueContent}
                                 </div>
-                                <span className="self-end ml-[2rem] italic font-light text-[.8rem]">Per month</span>
+                                {!!perMonth && <span className="self-end ml-[2rem] italic font-light text-[.8rem]">{perMonth}</span>}
                             </div>
                             <span className="w-full h-[.1rem] bg-[#EAEBEC] mt-[.6rem] mb-[1.5rem]"></span>
                             <div className="colJustifyCenter gap-[.55rem] text-[.92rem]">
                                 {details.map(({ id, detail, icon_name = "check_mark", classes = "font-semibold" }: IPricingDetails) => {
                                     return (
                                         <div key={id} className="flex items-center gap-[.3rem]">
-                                            <Icon name={icon_name} {...{ color }} />
+                                            <Icon name={icon_name} color={textColor} />
                                             <span className={classes}>{detail}</span>
                                         </div>
                                     )
                                 })}
                             </div>
+                            <TransparentButton text="Get Start" />
                         </div>
                     </Card>
                 )
