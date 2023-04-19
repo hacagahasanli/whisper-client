@@ -27,6 +27,7 @@ interface IWorkPlansProps {
     worksPlans: IWorkPlans[];
 }
 
+
 interface IPricingDetails {
     id: string;
     detail: string;
@@ -34,20 +35,34 @@ interface IPricingDetails {
     classes?: string;
 }
 
-interface IPlanPrice{
+interface IPriceDetails {
+    textColor: string;
+    details: IPricingDetails[]
+}
+
+interface IPlanPrice {
     currency?: string,
     value?: string,
     custom?: string,
 }
 
+interface IPlanHeaderProps {
+    bgColor: string;
+    textColor: string;
+    plan_name: string;
+    value?: string;
+    custom?: string;
+    currency?: string;
+    perMonth?: string;
+}
 interface IPlans extends IPlanPrice {
     id: string,
     plan_name: string,
     bgColor: string,
     textColor: string,
-    perMonth?:string,
-    bdColor:string;
-    borderCard?:string;
+    perMonth?: string,
+    bdColor: string;
+    borderCard?: string;
     details: IPricingDetails[],
 }
 
@@ -59,5 +74,7 @@ export type {
     IFeaturedSpecItemsProps,
     IPricingDetails,
     IPlans,
-    IPlanPrice
+    IPlanPrice,
+    IPriceDetails,
+    IPlanHeaderProps
 }

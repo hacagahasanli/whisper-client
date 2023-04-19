@@ -1,10 +1,10 @@
 import { ICardProps } from "./ICard"
-import { cardDynmClasses } from "./CardHelper"
+import { memo } from "react"
 
-export const Card = ({ children, classes }: ICardProps) => {
+export const Card = memo(({ children, classes }: ICardProps) => {
     return (
         <div className={`${classes}`}>
             {children}
         </div>
     )
-}
+})

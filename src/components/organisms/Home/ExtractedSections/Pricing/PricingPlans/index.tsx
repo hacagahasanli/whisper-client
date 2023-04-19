@@ -1,7 +1,9 @@
 import { Card, Icon, TransparentButton } from "components"
 import { v4 } from "uuid"
-import { IPlans, IPricingDetails } from "../../IExtractedSections"
+import { IPlans } from "../../IExtractedSections"
 import { PlanPrice } from "../PlanPrice"
+import { PlanDetails } from "../PlanDetails"
+import { PlanHeader } from "../PlanHeader"
 
 export const PricingPlans = () => {
     const plans: IPlans[] = [
@@ -130,32 +132,14 @@ export const PricingPlans = () => {
         },
     ]
     return (
-        <div className="flex justify-between w-full gap-[1.5rem] p-0">
-            {plans.map(({ id, plan_name, details, bgColor, textColor, bdColor, borderCard, value, currency, custom, perMonth }: IPlans) => {
+        <div className="flex justify-between w-full gap-[1.5rem]">
+            {plans.map(({ id, textColor, details, bdColor, borderCard, ...rest }: IPlans) => {
                 return (
                     <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] ${borderCard}`}>
                         <div className="w-full colJustifyCenter gap-[1rem]">
-                            <div className="flex">
-                                <Card classes={`p-[1rem] rounded-[.6rem] ${bgColor} inline-block`}>
-                                    <Icon name="cup" />
-                                </Card>
-                                <div className="flex flex-col justify-between min-h-full ml-[.6rem]">
-                                    <span className={`${textColor}`}>{plan_name}</span>
-                                    <PlanPrice {...{ value, currency, custom }} />
-                                </div>
-                                {!!perMonth && <span className="self-end ml-[2rem] italic font-light text-[.8rem]">{perMonth}</span>}
-                            </div>
+                            <PlanHeader {...{ textColor }} {...rest} />
                             <span className="w-full h-[.1rem] bg-[#EAEBEC] mt-[.6rem] mb-[1.5rem]"></span>
-                            <div className="colJustifyCenter gap-[.55rem] text-[.92rem]">
-                                {details.map(({ id, detail, icon_name = "check_mark", classes = "font-normal" }: IPricingDetails) => {
-                                    return (
-                                        <div key={id} className="flex items-center gap-[.3rem]">
-                                            <Icon name={icon_name} color={textColor} />
-                                            <span className={classes}>{detail}</span>
-                                        </div>
-                                    )
-                                })}
-                            </div>
+                            <PlanDetails {...{ details, textColor }} />
                             <TransparentButton text="Get Start" classes={`${textColor} ${bdColor}`} />
                         </div>
                     </Card>
