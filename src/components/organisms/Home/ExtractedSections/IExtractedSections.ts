@@ -27,4 +27,31 @@ interface IWorkPlansProps {
     worksPlans: IWorkPlans[];
 }
 
-export type { IWorkPlans, IStepItems, IWorkPlansProps, IFeaturedSpecItems, IFeaturedSpecItemsProps }
+interface IPricingDetails {
+    id: string;
+    detail: string;
+    icon_name?: string;
+    classes?: string;
+}
+
+interface IPlans {
+    id: string,
+    plan_name: string,
+    currency?: string,
+    value?: string,
+    color: string,
+    custom?: string,
+    details: IPricingDetails[],
+}
+
+
+
+export type {
+    IWorkPlans,
+    IStepItems,
+    IWorkPlansProps,
+    IFeaturedSpecItems,
+    IFeaturedSpecItemsProps,
+    IPricingDetails,
+    IPlans
+}
