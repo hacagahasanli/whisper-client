@@ -34,15 +34,18 @@ interface IPricingDetails {
     classes?: string;
 }
 
-interface IPlans {
-    id: string,
-    plan_name: string,
+interface IPlanPrice{
     currency?: string,
     value?: string,
+    custom?: string,
+}
+
+interface IPlans extends IPlanPrice {
+    id: string,
+    plan_name: string,
     bgColor: string,
     textColor: string,
     perMonth?:string,
-    custom?: string,
     bdColor:string;
     borderCard?:string;
     details: IPricingDetails[],
@@ -55,5 +58,6 @@ export type {
     IFeaturedSpecItems,
     IFeaturedSpecItemsProps,
     IPricingDetails,
-    IPlans
+    IPlans,
+    IPlanPrice
 }

@@ -1,6 +1,7 @@
 import { Card, Icon, TransparentButton } from "components"
 import { v4 } from "uuid"
 import { IPlans, IPricingDetails } from "../../IExtractedSections"
+import { PlanPrice } from "../PlanPrice"
 
 export const PricingPlans = () => {
     const plans: IPlans[] = [
@@ -131,12 +132,6 @@ export const PricingPlans = () => {
     return (
         <div className="flex justify-between w-full gap-[1.5rem] p-0">
             {plans.map(({ id, plan_name, details, bgColor, textColor, bdColor, borderCard, value, currency, custom, perMonth }: IPlans) => {
-                const valueContent = !!value ? (
-                    <div className="flex justify-between w-[2.2rem]">
-                        <span style={{ lineHeight: "1.2rem" }} className="self-end font-semibold text-[1.2rem]">{currency}</span>
-                        <p style={{ lineHeight: "1.6rem" }} className="text-[2rem] mb-[.1rem] font-semibold">{value}</p>
-                    </div>
-                ) : <span className="font-bold text-[1.1rem]">{custom}</span>
                 return (
                     <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] ${borderCard}`}>
                         <div className="w-full colJustifyCenter gap-[1rem]">
@@ -146,7 +141,7 @@ export const PricingPlans = () => {
                                 </Card>
                                 <div className="flex flex-col justify-between min-h-full ml-[.6rem]">
                                     <span className={`${textColor}`}>{plan_name}</span>
-                                    {valueContent}
+                                    <PlanPrice {...{ value, currency, custom }} />
                                 </div>
                                 {!!perMonth && <span className="self-end ml-[2rem] italic font-light text-[.8rem]">{perMonth}</span>}
                             </div>
