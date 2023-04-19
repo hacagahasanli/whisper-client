@@ -11,4 +11,13 @@ interface IIconSize {
     height: string
 }
 
-export type { IMethod, IIcons, IIconSize }
+interface IIconProps {
+    name: string;
+    method?: () => void;
+    width?: string;
+    height?: string;
+    color?: string
+}
+
+
+export type { IMethod, IIcons, IIconSize, IIconProps }
