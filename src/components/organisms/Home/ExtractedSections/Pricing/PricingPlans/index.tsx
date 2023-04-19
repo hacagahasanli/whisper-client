@@ -132,14 +132,13 @@ export const PricingPlans = () => {
     ]
     return (
         <div className="flex justify-between w-full gap-[1.5rem]">
-            {plans.map(({ id, textColor, details, bdColor, borderCard, ...rest }: IPlans) => {
+            {plans.map(({ id, textColor, details, bdColor, borderCard, text = "Get Start", ...rest }: IPlans) => {
                 return (
                     <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] ${borderCard}`}>
                         <div className="w-full colJustifyCenter gap-[1rem]">
                             <PlanHeader {...{ textColor }} {...rest} />
-                            <span className="w-full h-[.1rem] bg-[#EAEBEC] mt-[.6rem] mb-[1.5rem]"></span>
                             <PlanDetails {...{ details, textColor }} />
-                            <TransparentButton text="Get Start" classes={`${textColor} ${bdColor}`} />
+                            <TransparentButton {...{ text }} classes={`${textColor} ${bdColor}`} />
                         </div>
                     </Card>
                 )
