@@ -51,7 +51,7 @@ export const HowItWorksSection = () => {
         },
     ]
     return (
-        <SectionLayout classes="max-w-[1100px] mt-[6.5rem] gap-[4rem]">
+        <SectionLayout classes="max-w-[1000px] mt-[6.5rem] gap-[4rem]">
             <SectionTitle name="howItWorks" />
             <WorkPlans {...{ worksPlans }} />
         </SectionLayout>

@@ -44,6 +44,7 @@ interface IPlanPrice {
     currency?: string,
     value?: string,
     custom?: string,
+    perMonth?:string;
 }
 
 interface IPlanHeaderProps {
@@ -54,6 +55,7 @@ interface IPlanHeaderProps {
     custom?: string;
     currency?: string;
     perMonth?: string;
+    extraBeauty?: boolean;
 }
 interface IPlans extends IPlanPrice {
     id: string,

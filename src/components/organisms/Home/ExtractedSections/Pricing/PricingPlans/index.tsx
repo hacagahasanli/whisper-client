@@ -139,7 +139,7 @@ export const PricingPlans = () => {
                     <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] relative ${borderCard}`}>
                         <ExtraBeauty {...{ extraBeauty }} />
                         <div className="w-full colJustifyCenter gap-[1rem] relative" style={{ zIndex: "1" }}>
-                            <PlanHeader {...{ textColor }} {...rest} />
+                            <PlanHeader {...{ textColor, extraBeauty }} {...rest} />
                             <PlanDetails {...{ details, textColor }} />
                             <TransparentButton {...{ text }} classes={`${textColor} ${bdColor}`} />
                         </div>
