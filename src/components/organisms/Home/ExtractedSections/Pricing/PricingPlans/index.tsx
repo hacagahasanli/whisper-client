@@ -1,8 +1,9 @@
-import { Card, Icon, TransparentButton } from "components"
+import { Card, TransparentButton } from "components"
 import { v4 } from "uuid"
 import { IPlans } from "../../IExtractedSections"
 import { PlanDetails } from "../PlanDetails"
 import { PlanHeader } from "../PlanHeader"
+import { ExtraBeauty } from "./ExtraBeauty"
 
 export const PricingPlans = () => {
     const plans: IPlans[] = [
@@ -136,10 +137,7 @@ export const PricingPlans = () => {
             {plans.map(({ id, textColor, details, bdColor, borderCard, text = "Get Start", extraBeauty, ...rest }: IPlans) => {
                 return (
                     <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] relative ${borderCard}`}>
-                        {extraBeauty && (<div style={{ position: "absolute", top: "0", left: 0, zIndex: "0" }}>
-                            <Icon name="shap" />
-                        </div>
-                        )}
+                        <ExtraBeauty {...{ extraBeauty }} />
                         <div className="w-full colJustifyCenter gap-[1rem] relative" style={{ zIndex: "1" }}>
                             <PlanHeader {...{ textColor }} {...rest} />
                             <PlanDetails {...{ details, textColor }} />
