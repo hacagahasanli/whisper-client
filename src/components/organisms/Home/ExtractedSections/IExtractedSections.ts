@@ -65,6 +65,7 @@ interface IPlans extends IPlanPrice {
     borderCard?: string;
     details: IPricingDetails[],
     text?: string;
+    extraBeauty?:boolean;
 }
 
 export type {

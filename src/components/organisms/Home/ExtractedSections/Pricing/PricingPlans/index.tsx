@@ -1,4 +1,4 @@
-import { Card, TransparentButton } from "components"
+import { Card, Icon, TransparentButton } from "components"
 import { v4 } from "uuid"
 import { IPlans } from "../../IExtractedSections"
 import { PlanDetails } from "../PlanDetails"
@@ -56,6 +56,7 @@ export const PricingPlans = () => {
             textColor: 'text-[#1681FE]',
             bdColor: 'border-[#1681FE]',
             borderCard: 'border-[.125rem] border-solid border-[#1681FE]',
+            extraBeauty: true,
             details: [
                 {
                     id: `professionalDetail/${v4()}`,
@@ -132,10 +133,14 @@ export const PricingPlans = () => {
     ]
     return (
         <div className="flex justify-between w-full gap-[1.5rem]">
-            {plans.map(({ id, textColor, details, bdColor, borderCard, text = "Get Start", ...rest }: IPlans) => {
+            {plans.map(({ id, textColor, details, bdColor, borderCard, text = "Get Start", extraBeauty, ...rest }: IPlans) => {
                 return (
-                    <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] ${borderCard}`}>
-                        <div className="w-full colJustifyCenter gap-[1rem]">
+                    <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] relative ${borderCard}`}>
+                        {extraBeauty && (<div style={{ position: "absolute", top: "0", left: 0, zIndex: "0" }}>
+                            <Icon name="shap" />
+                        </div>
+                        )}
+                        <div className="w-full colJustifyCenter gap-[1rem] relative" style={{ zIndex: "1" }}>
                             <PlanHeader {...{ textColor }} {...rest} />
                             <PlanDetails {...{ details, textColor }} />
                             <TransparentButton {...{ text }} classes={`${textColor} ${bdColor}`} />
