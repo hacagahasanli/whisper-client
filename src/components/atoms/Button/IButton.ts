@@ -7,7 +7,7 @@ interface IDefaultButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 interface IAccessButton extends IDefaultButton {
     hasIcon?: boolean;
     bgWhite?: boolean;
-    width?: string;
+    classes?: string;
 }
 
 interface ITransparentButton extends IDefaultButton {

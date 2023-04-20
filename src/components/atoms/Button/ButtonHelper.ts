@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 
-const defaultButtonClasses = `w-full px-6 flex justify-center items-center gap-1 text-[1.2rem] rounded-md min-h-[3rem]`
-export const buttonClasses = (bgWhite: boolean, width: string) => classnames(
+const defaultButtonClasses = `w-full flex justify-center items-center gap-1 text-[1.2rem] min-h-[3rem]`
+export const buttonClasses = (bgWhite: boolean) => classnames(
     {
         "bg-default-bg": !bgWhite,
         "bg-white": bgWhite,

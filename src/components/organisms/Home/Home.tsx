@@ -1,5 +1,5 @@
 import { ContainerLayout } from "components"
-import { HeadSection, HowItWorksSection, FeaturedSpecSection, PricingSection } from "./ExtractedSections"
+import { HeadSection, HowItWorksSection, FeaturedSpecSection, PricingSection, FreeAddSection } from "./ExtractedSections"
 
 export const Home = () => {
     return (
@@ -8,6 +8,7 @@ export const Home = () => {
             <HowItWorksSection />
             <FeaturedSpecSection />
             <PricingSection />
+            <FreeAddSection />
         </ContainerLayout>
     )
 } 

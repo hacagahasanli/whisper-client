@@ -136,7 +136,7 @@ export const PricingPlans = () => {
         <div className="flex justify-between w-full gap-[1.5rem]">
             {plans.map(({ id, textColor, details, bdColor, borderCard, text = "Get Start", extraBeauty, ...rest }: IPlans) => {
                 return (
-                    <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] relative ${borderCard}`}>
+                    <Card key={id} classes={`px-[1.1rem] py-[1.45rem] rounded-[1rem] w-full bg-white h-max text-[#293241] relative ${borderCard} cursor-pointer`}>
                         <ExtraBeauty {...{ extraBeauty }} />
                         <div className="w-full colJustifyCenter gap-[1rem] relative" style={{ zIndex: "1" }}>
                             <PlanHeader {...{ textColor, extraBeauty }} {...rest} />

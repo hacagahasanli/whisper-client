@@ -2,12 +2,13 @@ import { Icon } from "components"
 import { IAccessButton, ITransparentButton } from "./IButton"
 import { buttonClasses } from "./ButtonHelper"
 
-const AccessButton = ({ type = "button", text, onClick, hasIcon = false, bgWhite = false, width = "full" }: IAccessButton) => {
-    const btnClass = buttonClasses(bgWhite, width)
+const AccessButton = ({ type = "button", text, onClick, hasIcon = false, bgWhite = false, classes = "" }: IAccessButton) => {
+    const btnClass = buttonClasses(bgWhite)
+    const extraClass = classes ? classes : "rounded-md px-6"
     return (
         <button
             {...{ type, onClick }}
-            className={btnClass}
+            className={`${btnClass} ${extraClass}`}
         >
             {text}
             {hasIcon && <Icon name="arrow_right" />}
