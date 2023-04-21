@@ -44,7 +44,7 @@ interface IPlanPrice {
     currency?: string,
     value?: string,
     custom?: string,
-    perMonth?:string;
+    perMonth?: string;
 }
 
 interface IPlanHeaderProps {
@@ -67,7 +67,16 @@ interface IPlans extends IPlanPrice {
     borderCard?: string;
     details: IPricingDetails[],
     text?: string;
-    extraBeauty?:boolean;
+    extraBeauty?: boolean;
+}
+
+interface IDefaultName {
+    id: string;
+    name: string;
+}
+
+interface IFooterIcons extends IDefaultName {
+
 }
 
 export type {
@@ -80,5 +89,6 @@ export type {
     IPlans,
     IPlanPrice,
     IPriceDetails,
-    IPlanHeaderProps
+    IPlanHeaderProps,
+    IFooterIcons
 }
