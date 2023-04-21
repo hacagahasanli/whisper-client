@@ -2,6 +2,10 @@
 export default {
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        satoshi: ['Satoshi', 'sans-serif']
+      },
       colors: {
         'default-tc': '#E6E6E6',
         'default-bg': '#1A4CA1',

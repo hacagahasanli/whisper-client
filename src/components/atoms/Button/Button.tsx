@@ -4,7 +4,7 @@ import { buttonClasses } from "./ButtonHelper"
 
 const AccessButton = ({ type = "button", text, onClick, hasIcon = false, bgWhite = false, classes = "" }: IAccessButton) => {
     const btnClass = buttonClasses(bgWhite)
-    const extraClass = classes ? classes : "rounded-md px-6"
+    const extraClass = classes ? classes : "rounded-md px-6 text-[1.2rem] min-h-[3rem] gap-1"
     return (
         <button
             {...{ type, onClick }}

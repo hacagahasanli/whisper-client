@@ -20,8 +20,8 @@ export const FooterSection = () => {
         },
     ]
     return (
-        <SectionLayout classes="max-w-[1280px] py-[2.2rem] gap-[4rem]" sClasses="border-t-[.05rem] border-[#cccccc]">
-            <footer className="w-full betweenItemsCenter py-[2rem] border-b-[.1rem] border-[#cccccc]">
+        <SectionLayout classes="max-w-[1280px] pt-[4rem] pb-[2.5rem] gap-[4rem]" sClasses="border-t-[.05rem] border-[#cccccc]">
+            <footer className="w-full colJustifyCenter">
                 <FooterHead {...{ FOOTER_ICONS }} />
                 <FooterNavMenu />
             </footer>
