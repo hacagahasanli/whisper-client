@@ -34,7 +34,7 @@ export const FooterNavMenu = () => {
         <div className="colJustifyCenter gap-[1rem]">
             <span className="font-[800] text-[1.1rem]">Whisper</span>
             <div className="w-full betweenItemsCenter">
-                <ul className="flex items-center gap-[6rem] font-poppins text-[1rem] cursor-pointer text-[#272727]">
+                <ul className="flex items-center gap-[5rem] font-poppins text-[1rem] cursor-pointer">
                     {footerNavLists?.map(({ id, name }: IFooterList) => <li key={id}>{name}</li>)}
                 </ul>
                 <AccessButton text="Contact Us" classes="max-w-[10rem] text-[1rem] font-semibold rounded-[.5rem] py-[.6rem] font-poppins" />

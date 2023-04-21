@@ -21,9 +21,10 @@ export const FooterSection = () => {
     ]
     return (
         <SectionLayout classes="max-w-[1280px] pt-[4rem] pb-[2.5rem] gap-[4rem]" sClasses="border-t-[.05rem] border-[#cccccc]">
-            <footer className="w-full colJustifyCenter">
+            <footer className="w-full colJustifyCenter text-[#272727]">
                 <FooterHead {...{ FOOTER_ICONS }} />
                 <FooterNavMenu />
+                <span className="mx-auto mt-[4rem] font-poppins text-[1rem]">©2023 - All Rights Reserved</span>
             </footer>
         </SectionLayout>
     )
