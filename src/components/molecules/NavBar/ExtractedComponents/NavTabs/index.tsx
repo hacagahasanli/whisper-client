@@ -20,7 +20,7 @@ export const NavTabs = () => {
         },
     ]
     return (
-        <nav className="flex">
+        <nav className="flex font-satoshi">
             <ul className="flex gap-[5rem] items-center">
                 {navLists.map(({ id, name }: INavList) => (
                     <li className="text-gray-blue text-[1.2rem] cursor-pointer" key={id}>{name}</li>
