@@ -1,12 +1,12 @@
 import { FC } from "react"
 import { IIconProps, IIcons } from "./IIconGenerator"
-import { ArrowLeft, LogoDark, ArrowRight, CheckMark, CrossMark, Cup, Debug, Encryption, Filter, LogoLight, Plans, Security, Shap, Sharing } from "./Icons"
+import { ArrowLeft, LogoDark, ArrowRight, CheckMark, CrossMark, Cup, Debug, Encryption, Filter, LogoLight, Plans, Security, Shap, Sharing, GithubIcon, InstagramIcon } from "./Icons"
 
 export const Icon: FC<IIconProps> = ({ name, method, color, ...rest }) => {
     const icons: IIcons = {
         //login
         "arrow_left": ArrowLeft,
-        
+
         //global
         "arrow_right": ArrowRight,
         "logo_light": LogoLight,
@@ -22,7 +22,9 @@ export const Icon: FC<IIconProps> = ({ name, method, color, ...rest }) => {
         "cup": Cup,
         "check_mark": CheckMark,
         "cross_mark": CrossMark,
-        "shap": Shap
+        "shap": Shap,
+        "twitter_icon": GithubIcon,
+        "github_icon": InstagramIcon
     }
     const SelectedIcon = icons[name]
     return <SelectedIcon {...{ method, color }} {...rest} />;
