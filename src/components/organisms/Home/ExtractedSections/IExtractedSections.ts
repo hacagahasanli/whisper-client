@@ -79,6 +79,11 @@ interface IFooterIcons extends IDefaultName {
 
 }
 
+interface IFooterHeadProps {
+    FOOTER_ICONS: IFooterIcons[]
+}
+
+
 export type {
     IWorkPlans,
     IStepItems,
@@ -90,5 +95,6 @@ export type {
     IPlanPrice,
     IPriceDetails,
     IPlanHeaderProps,
-    IFooterIcons
+    IFooterIcons,
+    IFooterHeadProps
 }

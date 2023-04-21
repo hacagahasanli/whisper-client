@@ -1,6 +1,8 @@
-import { Icon, SectionLayout } from "components"
-import { v4 } from "uuid"
+import { SectionLayout } from "components"
 import { IFooterIcons } from "../IExtractedSections"
+import { FooterHead } from "./FooterHead"
+import { FooterNavMenu } from "./FooterNavMenu"
+import { v4 } from "uuid"
 
 export const FooterSection = () => {
     const FOOTER_ICONS: IFooterIcons[] = [
@@ -20,10 +22,8 @@ export const FooterSection = () => {
     return (
         <SectionLayout classes="max-w-[1280px] py-[2.2rem] gap-[4rem]" sClasses="border-t-[.05rem] border-[#cccccc]">
             <footer className="w-full betweenItemsCenter py-[2rem] border-b-[.1rem] border-[#cccccc]">
-                <Icon name="logo_dark" />
-                <div className="flexCenterx2 gap-[2.6rem]">
-                    {FOOTER_ICONS.map(({ id, name }: IFooterIcons) => <Icon key={id} {...{ name }} />)}
-                </div>
+                <FooterHead {...{ FOOTER_ICONS }} />
+                <FooterNavMenu />
             </footer>
         </SectionLayout>
     )
