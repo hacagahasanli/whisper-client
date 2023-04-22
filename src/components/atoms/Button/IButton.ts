@@ -1,8 +1,18 @@
 import React, { ButtonHTMLAttributes } from "react"
-interface IAccessButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-    text?: string;
+
+interface IDefaultButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+    text: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+}
+interface IAccessButton extends IDefaultButton {
+    hasIcon?: boolean;
+    bgWhite?: boolean;
+    classes?: string;
+}
+
+interface ITransparentButton extends IDefaultButton {
+    classes?: string;
 }
 
 
-export type { IAccessButton }
+export type { IAccessButton, ITransparentButton }

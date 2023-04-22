@@ -1,18 +1,14 @@
 import { createBrowserRouter } from "react-router-dom"
-import { Login } from "components"
+import { createLoginRoute } from "./routesHelpers"
+import { Home } from "components"
 
 const router = createBrowserRouter([
+    createLoginRoute("/login"),
+    createLoginRoute("/signup-email"),
+    createLoginRoute("/signup-fullname"),
     {
-        path: "/login",
-        Component: Login
-    },
-    {
-        path: "/signup-email",
-        Component: Login
-    },
-    {
-        path: "/signup-fullname",
-        Component: Login
+        path: "",
+        Component: Home
     }
 ])
 

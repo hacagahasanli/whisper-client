@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+    .autoColFlexCenter {
+        @apply flex flex-col justify-center items-center mx-auto
+    }
+
+    .flexCenterx2 {
+        @apply flex items-center justify-center
+    }
+
+    .betweenItemsCenter {
+        @apply flex items-center justify-between
+    }
+
+    .colItemsCenter {
+        @apply flex flex-col items-center
+    }
+
+    .colJustifyCenter {
+        @apply flex flex-col justify-center
+    }
+}
