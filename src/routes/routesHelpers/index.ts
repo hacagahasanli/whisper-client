@@ -1,6 +1,6 @@
 import { Login } from "components";
 
-export const createLoginRoute = (path: string) => {
+export const createRoute = (path: string) => {
     return {
         path: path,
         Component: Login
