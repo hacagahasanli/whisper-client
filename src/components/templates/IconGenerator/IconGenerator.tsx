@@ -1,6 +1,6 @@
 import { FC } from "react"
 import { IIconProps, IIcons } from "./IIconGenerator"
-import { ArrowLeft, LogoDark, ArrowRight, CheckMark, CrossMark, Cup, Debug, Encryption, Filter, LogoLight, Plans, Security, Shap, Sharing, TwitterIcon, GithubIcon, InstagramIcon } from "./Icons"
+import { ArrowLeft, LogoDark, ArrowRight, CheckMark, CrossMark, Cup, Debug, Encryption, Filter, LogoLight, Plans, Security, Shap, Sharing, TwitterIcon, GithubIcon, InstagramIcon, SearchIcon } from "./Icons"
 
 export const Icon: FC<IIconProps> = ({ name, method, color, ...rest }) => {
     const icons: IIcons = {
@@ -11,6 +11,7 @@ export const Icon: FC<IIconProps> = ({ name, method, color, ...rest }) => {
         "arrow_right": ArrowRight,
         "logo_light": LogoLight,
         "logo_dark": LogoDark,
+        "search": SearchIcon,
 
         //home
         "home_security": Security,
