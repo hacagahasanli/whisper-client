@@ -6,10 +6,8 @@ const router = createBrowserRouter([
     createRoute("/login"),
     createRoute("/signup-email"),
     createRoute("/signup-fullname"),
-    {
-        path: "",
-        Component: Home
-    }
+    createRoute("", Home),
+    createRoute("",)
 ])
 
 export default router
