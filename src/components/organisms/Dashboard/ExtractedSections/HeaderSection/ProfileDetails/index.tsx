@@ -1,4 +1,6 @@
-export const ProfileDetails = () => {
+import { memo } from "react"
+
+export const ProfileDetails = memo(() => {
     return (
         <div className="flex flex-0 min-w-[400px] items-center gap-[.8rem] justify-center">
             <div>
@@ -10,4 +12,4 @@ export const ProfileDetails = () => {
             </div>
         </div>
     )
-}
+})
