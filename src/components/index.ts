@@ -18,7 +18,8 @@ export {
 //organisms
 export {
     Login,
-    Home
+    Home,
+    Dashboard
 } from "./organisms";
 
 //templates
