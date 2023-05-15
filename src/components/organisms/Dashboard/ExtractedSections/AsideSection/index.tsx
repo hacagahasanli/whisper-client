@@ -38,7 +38,7 @@ export const AsideSection = () => {
     ]
 
     return (
-        <aside className="w-[280px] min-h-screen relative">
+        <aside className="w-[325px] min-h-screen relative">
             <span className="absolute right-0 w-[.15rem] min-h-screen bg-[#E5E9EB]"></span>
             <div className="py-[2rem] px-[2rem] w-full flex flex-col gap-3">
                 {
