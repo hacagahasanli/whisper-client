@@ -1,14 +1,8 @@
 import { Icon } from "components"
+import { memo } from "react";
+import { AsideButtons } from "../IExtractedSections";
 
-interface AsideButtons {
-    id: string;
-    name: string;
-    value: string;
-    addClass?: string;
-    defaultClass?: string;
-}
-
-export const AsideSection = () => {
+export const AsideSection = memo(() => {
     const classDef = "flex items-center gap-[1rem] px-[1.4rem] min-h-[40px] rounded-lg"
     const asideButtons: AsideButtons[] = [
         {
@@ -56,4 +50,4 @@ export const AsideSection = () => {
             </div>
         </aside >
     )
-}
+})
