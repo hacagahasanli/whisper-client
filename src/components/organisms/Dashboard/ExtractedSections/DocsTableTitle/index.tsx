@@ -2,7 +2,10 @@ import { Icon } from "components"
 import { memo } from "react"
 
 export const DocsTableTitle = memo(() => {
-    const icons = [{ name: "column_grid", classes: "rounded-l-md bg-[#E5E9EB]" }, { name: "row_grid", classes: "rounded-r-md bg-[#efeff0]" }]
+    const icons = [
+        { name: "column_grid", classes: "rounded-l-md bg-[#E5E9EB]" },
+        { name: "row_grid", classes: "rounded-r-md bg-[#efeff0]" }
+    ]
     return (
         <div className="relative h-[155px] w-full text-[#252C32]">
             <div className="w-full pt-[2rem] pl-[3rem] pr-[5rem] flex space-between flex-col">
