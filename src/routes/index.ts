@@ -1,15 +1,13 @@
 import { createBrowserRouter } from "react-router-dom"
-import { createLoginRoute } from "./routesHelpers"
-import { Home } from "components"
+import { createRoute } from "./routesHelpers"
+import { Home, Dashboard } from "components"
 
 const router = createBrowserRouter([
-    createLoginRoute("/login"),
-    createLoginRoute("/signup-email"),
-    createLoginRoute("/signup-fullname"),
-    {
-        path: "",
-        Component: Home
-    }
+    createRoute("/login"),
+    createRoute("/signup-email"),
+    createRoute("/signup-fullname"),
+    createRoute("", Home),
+    createRoute("/dashboard", Dashboard)
 ])
 
 export default router

@@ -1,8 +1,9 @@
 import { Login } from "components";
+import { FC } from "react";
 
-export const createLoginRoute = (path: string) => {
+export const createRoute = (path: string, Component: FC = Login) => {
     return {
         path: path,
-        Component: Login
+        Component
     };
 }
