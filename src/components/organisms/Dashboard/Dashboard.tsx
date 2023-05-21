@@ -1,6 +1,5 @@
 import { ContainerLayout } from "components"
 import { HeaderSection, AsideSection, DocsTableTitle } from "./ExtractedSections"
-import React from "react"
 
 export const Dashboard = () => {
     return (
