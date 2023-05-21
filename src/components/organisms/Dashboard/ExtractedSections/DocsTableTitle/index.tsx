@@ -1,5 +1,5 @@
 import { Icon } from "components"
-import { memo } from "react"
+import React, { memo} from "react"
 
 export const DocsTableTitle = memo(() => {
     const icons = [
